@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Downloader Pro | Live UI Demo</title>
+    <meta name="description" content="Live UI Demo of the All-in-One Media Downloader. Please run the full version locally for download functionality.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/img/favicon.png?v=1.1">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .demo-banner {
+            background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 0.9rem;
+            position: sticky;
+            top: 0;
+            z-index: 10000;
+        }
+    </style>
+</head>
+<body class="page-home">
+
+    <div class="demo-banner">
+        🚀 <strong>Live UI Demo:</strong> This is a design preview. To actually download videos, please <a href="https://github.com/Prince1singh1/Video-Downloade" style="color: white; text-decoration: underline;">download the full source code</a> and run it via XAMPP.
+    </div>
+
+    <!-- Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <img src="assets/img/logo.png?v=1.1" alt="Logo" style="height: 40px; width: auto; border-radius: 8px;">
+                    Media<span>Downloader</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Downloader</a></li>
+                    <li><a href="#" onclick="showToast('Not available in Demo', 'error')">Playlist</a></li>
+                    <li><a href="#" onclick="showToast('Not available in Demo', 'error')">Converter</a></li>
+                    <li><a href="#" onclick="showToast('Not available in Demo', 'error')">Summarizer</a></li>
+                    <li><a href="#" onclick="showToast('Not available in Demo', 'error')">System Status</a></li>
+                    <li><a href="#" onclick="showToast('Not available in Demo', 'error')">More Tools</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>All-in-One Media <br> Downloader</h1>
+            <p>Download high-quality videos (144p to 4K), MP3 audio, and thumbnails from YouTube, Instagram, Facebook, and TeraBox instantly.</p>
+            
+            <!-- Download Search Form -->
+            <div class="search-container">
+                <form id="downloadForm" class="input-box">
+                    <input type="url" id="urlInput" placeholder="Paste link (YouTube, TeraBox, Instagram, etc.)..." required>
+                    <button type="submit">Download <i class="fa-solid fa-arrow-down" style="margin-left: 5px;"></i></button>
+                </form>
+            </div>
+
+            <!-- Loader -->
+            <div id="loader" class="loader" style="display: none;"></div>
+
+            <!-- Result Content Area -->
+            <div id="resultContent"></div>
+
+            <div class="ad-slot ad-banner-horizontal glass"> Adsterra Banner Ads Here (728x90) </div>
+        </div>
+    </section>
+
+    <!-- Supported Platforms Icons -->
+    <section class="container" style="animation: fadeIn 1s ease;">
+        <div class="glass" style="display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; margin-bottom: 80px; padding: 40px; border-radius: var(--radius-lg);">
+            <div class="platform-icon" style="text-align: center; transition: var(--transition);">
+                <i class="fa-brands fa-instagram" style="font-size: 2.5rem; display: block; margin-bottom: 12px; color: #E1306C;"></i>
+                <span style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--text-secondary);">Instagram</span>
+            </div>
+            <div class="platform-icon" style="text-align: center; transition: var(--transition);">
+                <i class="fa-brands fa-facebook-f" style="font-size: 2.5rem; display: block; margin-bottom: 12px; color: #1877F2;"></i>
+                <span style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--text-secondary);">Facebook</span>
+            </div>
+            <div class="platform-icon" style="text-align: center; transition: var(--transition);">
+                <i class="fa-brands fa-tiktok" style="font-size: 2.5rem; display: block; margin-bottom: 12px; color: #00f2ea;"></i>
+                <span style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--text-secondary);">TikTok</span>
+            </div>
+            <div class="platform-icon" style="text-align: center; transition: var(--transition);">
+                <i class="fa-brands fa-twitter" style="font-size: 2.5rem; display: block; margin-bottom: 12px; color: #1DA1F2;"></i>
+                <span style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--text-secondary);">Twitter / X</span>
+            </div>
+            <div class="platform-icon" style="text-align: center; transition: var(--transition);">
+                <i class="fa-brands fa-youtube" style="font-size: 2.5rem; display: block; margin-bottom: 12px; color: #ff0000;"></i>
+                <span style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--text-secondary);">YouTube</span>
+            </div>
+            <div class="platform-icon" style="text-align: center; transition: var(--transition);">
+                <i class="fa-solid fa-cloud" style="font-size: 2.5rem; display: block; margin-bottom: 12px; color: #00a1ff;"></i>
+                <span style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--text-secondary);">TeraBox</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="copyright">
+                <p>&copy; 2026 MediaDownloader Pro. All rights reserved. <br> <span style="font-size: 0.75rem;">Developed with ❤️ for the community.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Demo specific logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('downloadForm');
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                showToast('Backend disabled in Demo mode. Run locally for full features!', 'error');
+            });
+        });
+
+        function showToast(message, type = 'success') {
+            const toast = document.createElement('div');
+            toast.className = `toast toast-${type}`;
+            toast.innerText = message;
+            Object.assign(toast.style, {
+                position: 'fixed', bottom: '20px', right: '20px', background: type === 'success' ? '#10b981' : '#ef4444',
+                color: '#fff', padding: '12px 24px', borderRadius: '8px', zIndex: '3000', animation: 'fadeIn 0.3s ease'
+            });
+            document.body.appendChild(toast);
+            setTimeout(() => { toast.style.opacity = '0'; setTimeout(() => toast.remove(), 300); }, 3000);
+        }
+    </script>
+</body>
+</html>
