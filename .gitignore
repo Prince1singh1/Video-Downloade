@@ -1,6 +1,5 @@
 # Dependencies
-api/ffmpeg.exe
-api/yt-dlp.exe
+# (Large binaries now tracked via Git LFS)
 
 # Cache & Temporary Files
 api/cache/

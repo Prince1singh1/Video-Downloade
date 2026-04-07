@@ -1,0 +1,2 @@
+api/ffmpeg.exe filter=lfs diff=lfs merge=lfs -text
+api/yt-dlp.exe filter=lfs diff=lfs merge=lfs -text
