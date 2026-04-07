@@ -1,0 +1,31 @@
+# Dependencies
+api/ffmpeg.exe
+api/yt-dlp.exe
+
+# Cache & Temporary Files
+api/cache/
+api/temp_subs/
+website_codebase.txt
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE Files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
